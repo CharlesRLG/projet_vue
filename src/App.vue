@@ -62,12 +62,12 @@ export default {
   },
 
     beforeCreate() {
-    //  function testPlop() {
+     function testPlop() {
        alert("Plop");
-    //  }
-    //  setInterval(testPlop, 5000);
+     }
+     setInterval(testPlop, 5000);
 
-    //  clearInterval(testPlop) 
+     clearInterval(testPlop) 
     },
    
   //   created() {
