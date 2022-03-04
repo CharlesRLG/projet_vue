@@ -72,18 +72,11 @@ export default {
 
 <style>
 #app {
-  font-family: "Oswald", sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
   color: #2c3e50;
-}
-
-#home-logo {
-  position : relative;
-  width: 150px;
-}
-.background {
-  background: url("./assets/network.jpg");
-  height: 500px;
+  margin-top: 60px;
 }
 </style>
