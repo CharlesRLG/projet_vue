@@ -42,10 +42,12 @@ export default {
   },
   data(){
     return{
-      pageMenu : 'accueil',
+      pageMenu : 'formulaire',
       plop :""
     }
   },
+
+  //Ecoute les valeurs qui changent
   computed: {
     ...mapState(["pseudo"]),
   },
@@ -54,36 +56,34 @@ export default {
       say: function (message) {
         this.pageMenu = (message)
       },
-      redirect(){
-        if(this.pseudo == "plop"){
-          this.pageMenu = 'formulaire'
-        }
-      }
   },
 
-    beforeCreate() {
-     function testPlop() {
-       alert("Plop");
-     }
-     setInterval(testPlop, 5000);
-
-     clearInterval(testPlop) 
-    },
-   
-  //   created() {
-  //   alert('Plop créé')
-  // }
+//Surveille si la valeur change
+  watch: {
+      pseudo: function(nouveauPseudo){
+        // if(this.pseudo!="") ==> if(this.pseudo)
+        if(nouveauPseudo!=""){
+          this.pageMenu='formulaire'
+        }
+    }
+  }
 }
-
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Oswald", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+#home-logo {
+  position : relative;
+  width: 150px;
+}
+.background {
+  background: url("./assets/network.jpg");
+  height: 500px;
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div>
-
-    <h2> {{ pseudo }} !</h2>
-    <h2> {{ password }} !</h2>
+ 
+    <!-- <h2> {{ pseudo }} !</h2>
+    <h2> {{ password }} !</h2> -->
 
   </div>
 
