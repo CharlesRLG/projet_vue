@@ -6,10 +6,10 @@
             <input v-model="experienceTabsNews.nomExperience" />
             <br>
             <p>Date de début</p>
-            <input v-model="experienceTabsNews.dateDeDebutExperience" />
+            <input v-model="experienceTabsNews.dateDeDebutExperience" type="date"/>
             <br>
             <p>Date de fin</p>
-            <input v-model="experienceTabsNews.dateDeFinExperience" />
+            <input v-model="experienceTabsNews.dateDeFinExperience" type="date"/>
             <br>
             <button @click="saveExperience()">Enregistrer</button>
         </div>
@@ -44,9 +44,9 @@
               dateDeFinExperience: ""
             }],
             experienceTabs: [
-              {nomExperience: "caissier", 
-              dateDeDebutExperience: "14/14/56", 
-              dateDeFinExperience: "42/42/42"},
+              {nomExperience: "ex: caissier", 
+              dateDeDebutExperience: "ex: 14/14/56", 
+              dateDeFinExperience: "ex: 42/42/42"},
             ]
           }
         },

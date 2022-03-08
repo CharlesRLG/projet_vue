@@ -1,37 +1,64 @@
 <template>
-  <div class="connexion">
       <h1>Connexion</h1>
-      <input v-model="pseudo" />
-    <input type="password" v-model="password" />
-      <button @click="saveConnexion">Connexion</button>
-  </div>
+
+  <section id="connexionStyle">
+    <div class="background">
+        <input class="connectionPlacement" v-model="pseudo" placeholder="Entrez votre pseudo" /> <br />
+        <br />
+        <input
+          type="password"
+          v-model="password"
+          placeholder="Entrez votre mot de passe"
+        />
+        <br />
+        <br />
+        <button @click="saveConnexion">Connexion</button>
+    </div>
+  </section>
 </template>
-  
 
 <script>
-import { mapMutations } from "vuex";
+import { mapMutations } from 'vuex'
 export default {
   name: 'ConnexionForm',
-  data: function() {
+  data: function () {
     return {
-      pseudo: "",
-      pseudojuste:"plop",
-      password: "",
+      pseudo: '',
+      pseudojuste: 'p',
+      password: '',
     }
   },
+
   methods: {
-    ...mapMutations(["setPseudo"]),
-    ...mapMutations(["setPassword"]),
+    ...mapMutations(['setPseudo']),
+    ...mapMutations(['setPassword']),
     saveConnexion() {
-        if(this.pseudo == this.pseudojuste && this.password == this.pseudojuste){
-          alert("bien joué")
-          this.setPassword(this.password);
-          this.setPseudo(this.pseudo);
-        }else{
-          alert("tu es mauvais")
-        }
-        
-    }
-  }
+      if (
+        this.pseudo == this.pseudojuste &&
+        this.password == this.pseudojuste
+      ) {
+        alert('Bienvenue ! ')
+        this.setPassword(this.password)
+        this.setPseudo(this.pseudo)
+      } else {
+        alert('Utilisateur ou mot de passe inconnu')
+      }
+    },
+  },
 }
 </script>
+
+<style scoped>
+
+.background {
+  /*   C'est moche, à bosser*/
+  height: 500px;
+}
+
+h1 {
+  color: rgb(193, 162, 109);
+}
+.connectionPlacement{
+  margin-top: 150px;
+}
+</style>

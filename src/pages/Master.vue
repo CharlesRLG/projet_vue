@@ -1,8 +1,9 @@
 <template>
   <div>
 
-    <h2> {{ pseudo }} !</h2>
-    <h2> {{ password }} !</h2>
+<!--     <h2> Bonjour {{ pseudo }} !</h2>
+    <h2> Pour rappel, votre mdp est {{ password }} !</h2> -->
+
 
   </div>
 

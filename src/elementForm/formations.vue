@@ -6,10 +6,10 @@
         <input v-model="formationTabsNews.nomFormation" />
         <br>
         <p>Date de début</p>
-        <input v-model="formationTabsNews.dateDebutFormation" />
+        <input v-model="formationTabsNews.dateDebutFormation" type="date"/>
         <br>
         <p>Date de fin</p>
-        <input v-model="formationTabsNews.dateFinFormation" />
+        <input v-model="formationTabsNews.dateFinFormation" type="date"/>
         <br>
         <button @click="saveFormation()">Enregistrer</button>
       </div>
@@ -30,7 +30,7 @@
         </tbody>
       </table>
       </div>
-  </template>
+</template>
 
 <script>
   export default {
@@ -43,15 +43,16 @@
             dateFinFormation: ""
           }],
           formationTabs: [
-            {nomFormation: "Chandler Bing", 
-            dateDebutFormation: "42/42/42", 
-            dateFinFormation: "42/42/42"},
+            {nomFormation: "ex: Chandler Bing", 
+            dateDebutFormation: "ex: 42/42/42", 
+            dateFinFormation: "ex: 42/42/42"
+            },
           ]
         }
       },
 
     methods: {
-      saveFormation: function () {
+      saveFormation: function() {
         this.formation = Object.assign({}, this.formationTabsNews);
         alert('vous avez une nouvelle formation'+this.formation.nomFormation)
 

@@ -9,7 +9,7 @@
             <input v-model="presentationTabsNews.nomPresentation" />
             <br>
             <p>Description</p>
-            <input v-model="presentationTabsNews.descriptionPresentation" />
+            <textarea v-model="presentationTabsNews.descriptionPresentation" />
             <br>
             <button @click="savePresentation()">Enregistrer</button>
         </div>

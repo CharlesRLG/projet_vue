@@ -2,19 +2,18 @@
   <div>
     <Header />
     <Master />
-    <button v-on:click="say('accueil')">accueil</button>
-    <button v-on:click="say('apropos')">apropos</button>
-    <button v-on:click="say('mentionLegale')">mentionLegale</button>
-    <button v-on:click="say('connexion')">connexion</button>
+    <button v-on:click="say('accueil')">Accueil</button>
+    <button v-on:click="say('apropos')">A propos</button>
+    <button v-on:click="say('mentionLegale')">Mention Légale</button>
+    <button v-on:click="say('connexion')">Connexion</button>
 
-    <Accueil v-if="pageMenu == 'accueil'"/>
-    <Apropos v-if="pageMenu == 'apropos'"/>
-    <MentionLegale v-if="pageMenu == 'mentionLegale'"/>
-    <Formulaire v-if="pageMenu == 'formulaire'"/>
-    <Connexion v-if="pageMenu == 'connexion'"/>
+    <Accueil v-if="pageMenu == 'accueil'" />
+    <Apropos v-if="pageMenu == 'apropos'" />
+    <MentionLegale v-if="pageMenu == 'mentionLegale'" />
+    <Formulaire v-if="pageMenu == 'formulaire'" />
+    <Connexion v-if="pageMenu == 'connexion'" />
     <Footer />
   </div>
-
 </template>
 
 <script>
@@ -26,7 +25,7 @@ import Connexion from './pages/Connexion.vue'
 import Header from './template/Header'
 import Footer from './template/Footer'
 import Formulaire from './pages/Formulaire'
-import { mapState } from 'vuex';
+import { mapState } from 'vuex'
 
 export default {
   name: 'App',
@@ -40,43 +39,60 @@ export default {
     Footer,
     Formulaire,
   },
-  data(){
-    return{
-      pageMenu : 'formulaire',
-      plop :""
+  data() {
+    return {
+      pageMenu: 'accueil',
+      plop: '',
     }
   },
 
   //Ecoute les valeurs qui changent
   computed: {
-    ...mapState(["pseudo"]),
+    ...mapState(['pseudo']),
   },
 
   methods: {
-      say: function (message) {
-        this.pageMenu = (message)
-      },
+    say: function (message) {
+      this.pageMenu = message
+    },
   },
 
-//Surveille si la valeur change
+  //Surveille si la valeur change
   watch: {
-      pseudo: function(nouveauPseudo){
-        // if(this.pseudo!="") ==> if(this.pseudo)
-        if(nouveauPseudo!=""){
-          this.pageMenu='formulaire'
-        }
-    }
-  }
+    pseudo: function (nouveauPseudo) {
+      // if(this.pseudo!="") ==> if(this.pseudo)
+      if (nouveauPseudo != '') {
+        this.pageMenu = 'formulaire'
+      }
+    },
+  },
 }
 </script>
 
 <style>
+h1 {
+  color: rgb(193, 162, 109);
+}
+
+h2 {
+  margin-top: 10px;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Oswald', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+.background {
+  background: url('./assets/network.jpg');
+  max-height: auto;
+}
+
+#footer p{
+  color: black;
+  text-align: center;
+}
+
 </style>

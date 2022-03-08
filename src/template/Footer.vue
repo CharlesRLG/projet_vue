@@ -1,5 +1,10 @@
-  <template>
-    <div class="Footer">
-        <h1>Footer</h1>
-    </div>
-  </template>
+<template>
+  <div id="footer">
+    <p>© Copyright 2022 - Pop School Project</p>
+  </div>
+</template>
+
+<script></script>
+
+<style>
+</style>

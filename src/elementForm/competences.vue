@@ -32,7 +32,7 @@
               nomCompetence: "", 
             }],
             competenceTabs: [
-              {nomCompetence: "caissier",
+              {nomCompetence: "ex: caissier",
             }]
           }
         },
