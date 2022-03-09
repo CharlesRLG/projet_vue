@@ -8,7 +8,7 @@ const store = createStore({
     return {
       pseudo: '',
       password: '',
-      presentation: '',
+      presentationTabsNews: '',
       experienceChamps: '',
     }
   },
