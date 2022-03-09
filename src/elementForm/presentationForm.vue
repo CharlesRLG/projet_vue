@@ -33,6 +33,7 @@
     </div>
 </template>
 <script>
+import { mapMutations } from 'vuex'
     export default {
         data() {
           return {
@@ -52,13 +53,35 @@
         },
 
       methods: {
-        savePresentation: function () {
-          this.presentation = Object.assign({}, this.presentationTabsNews);
-          alert('vous vous appelez: ' + this.presentation.prenomPresentation)
-
-          this.presentationTabs.push(this.presentation);
-          // alert('vous avez une nouvelle formation'+this.formationTabs[0].nomFormation)
+    ...mapMutations(['setPresentation']),
+    savePresentation() {
+      if (!this.prenomPresentation &&
+          !this.nomPresentation &&
+          !this.descriptionPresentation 
+      ) {
+        alert('Attention, vous devez compléter tous les champs')
+      } else {
+        alert(
+          'vous avez saisie : ' +
+            this.prenomPresentation +
+            this.nomPresentation +
+            this.descriptionPresentation 
+        )
+        this.setPresentation(
+            this.prenomPresentation &&
+            this.nomPresentation &&
+            this.descriptionPresentation
+        )
+      }
+      // si présentation complet -> par le biais watch il va mapstate expérience
     },
+  //       savePresentation: function () {
+  //         this.presentation = Object.assign({}, this.presentationTabsNews);
+  //         alert('vous vous appelez: ' + this.presentation.prenomPresentation)
+
+  //         this.presentationTabs.push(this.presentation);
+  //         alert('vous avez une nouvelle formation'+this.formationTabs.nomFormation)
+  //   },
   },
 }
 </script>

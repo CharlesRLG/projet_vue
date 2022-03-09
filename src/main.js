@@ -12,6 +12,7 @@ const store = createStore({
       experienceChamps: '',
     }
   },
+  //mutations permets de faire muter et le state => gros store
   mutations: {
     setPseudo(state, pseudo) {
       console.error('setting pseudo', pseudo)
@@ -21,9 +22,9 @@ const store = createStore({
       console.error('setting password', password)
       state.password = password
     },
-    setPresentation(state, presentation) {
-      console.error('setting presentation', presentation)
-      state.presentation = presentation
+    setPresentation(state, presentationTabsNews) {
+      console.error('setting presentation', presentationTabsNews)
+      state.presentationTabsNews = presentationTabsNews
     },
     setExperiences(state, experienceChamps) {
       console.error('setting experience', experienceChamps)
@@ -32,6 +33,10 @@ const store = createStore({
   },
 })
 
+// Pour vueX, il faut faire attention à la version de vue utilisée avec la version de vueX.
+// On apporte la fonction createApp et on importe le store, on apporte #app (qui est la premiere vue de notre projet)
+// Si trop de lignes dans le main.js, il faudra créer un fichier store (nom, adresse, numéro de téléphone...).
+// Vue.js est asynchrome
 const app = createApp(App)
 
 app.use(store)

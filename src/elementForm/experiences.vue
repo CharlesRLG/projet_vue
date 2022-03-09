@@ -3,13 +3,13 @@
       <h1>Expérience</h1>
         <div>
             <p>Nom</p>
-            <input v-model="experienceTabsNews.nomExperience" />
+            <input v-model="experienceChamps.nomExperience" />
             <br>
             <p>Date de début</p>
-            <input v-model="experienceTabsNews.dateDeDebutExperience" type="date"/>
+            <input v-model="experienceChamps.dateDeDebutExperience" type="date"/>
             <br>
             <p>Date de fin</p>
-            <input v-model="experienceTabsNews.dateDeFinExperience" type="date"/>
+            <input v-model="experienceChamps.dateDeFinExperience" type="date"/>
             <br>
             <button @click="saveExperience()">Enregistrer</button>
         </div>
@@ -38,7 +38,7 @@
         data() {
           return {
             experience:[],
-            experienceTabsNews: [{
+            experienceChamps: [{
               nomExperience: "", 
               dateDeDebutExperience: "", 
               dateDeFinExperience: ""
@@ -53,7 +53,7 @@
 
       methods: {
         saveExperience: function () {
-          this.experience = Object.assign({}, this.experienceTabsNews);
+          this.experience = Object.assign({}, this.experienceChamps);
           // alert('vous avez une nouvelle expérience' + this.experience.nomExperience)
 
           this.experienceTabs.push(this.experience);
